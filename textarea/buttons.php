@@ -35,7 +35,7 @@ class Buttons {
       }
 
       $icon  = '<i class="icon fa fa-' . $button['icon'] . '"></i>';
-      
+
       if(!empty($button['btext'])) {
         $btext = '<span class="btext">' . $button['btext'] . '</span>';
       } else {
@@ -112,14 +112,14 @@ buttons::$setup = array(
   ),
   'ulist' => array(
     'label'    => $this->translation['buttons.ulist.label'],
-    'text'     =>' ',
+    'text'     => ' ',
     'shortcut' => 'meta+u',
     'template' => '- {text}',
     'icon'     => 'list-ul'
   ),
   'olist' => array(
     'label'    => $this->translation['buttons.olist.label'],
-    'text'     =>' ',
+    'text'     => ' ',
     'shortcut' => 'meta+o',
     'template' => '1. {text}',
     'icon'     => 'list-ol'

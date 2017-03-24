@@ -1,4 +1,4 @@
-<div class="modal-content pagelink">
+<div class="modal-content pagelink modal-content-large">
 
   <script type="text/javascript">
     $(document).ready(function(){
