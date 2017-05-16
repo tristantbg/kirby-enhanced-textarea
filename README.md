@@ -1,6 +1,6 @@
 # Kirby Enhanced Textarea v1.3
 
-![Preview](preview.png?raw=true)
+![Preview](https://cloud.githubusercontent.com/assets/7975568/26103764/44eb2fc4-3a3b-11e7-87dc-86b328f22f85.gif)
 
 ## Installation
 
