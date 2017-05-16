@@ -2,7 +2,7 @@
 
 This textarea extends the built-in textarea without reinventing the wheel. Handy and customizable headline functions, intelligent list buttons and a custom page selector make editing textareas a breeze.
 
-![Preview](https://cloud.githubusercontent.com/assets/7975568/26103764/44eb2fc4-3a3b-11e7-87dc-86b328f22f85.gif)
+![Preview](https://cloud.githubusercontent.com/assets/7975568/26114866/b3d1ee64-3a5e-11e7-8da6-0154f5e3399f.gif)
 
 ## Installation
 
