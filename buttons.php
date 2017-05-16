@@ -47,7 +47,7 @@ class Buttons {
         'type'                 => 'button',
         'tabindex'             => '-1',
         'title'                => @$button['label'] . ' (' . @$button['shortcut'] . ')',
-        'class'                => 'btn',
+        'class'                => 'btn ' . @$button['class'],
         'data-editor-shortcut' => @$button['shortcut'],
         'data-tpl'             => @$button['template'],
         'data-text'            => @$button['text'],
@@ -77,7 +77,8 @@ buttons::$setup = array(
     'btext'    => substr($h1, 1),
     'text'     => ' ',
     'shortcut' => 'meta+' . substr($h1, 1),
-    'template' => str_repeat("#",substr($h1, 1)) . ' {text}',
+    'template' => str_repeat("#",substr($h1, 1)) . ' ',
+    'class'    => "header",
     'icon'     => 'header'
   ),
   'h2' => array(
@@ -85,7 +86,8 @@ buttons::$setup = array(
     'btext'    => substr($h2, 1),
     'text'     => ' ',
     'shortcut' => 'meta+' . substr($h2, 1),
-    'template' => str_repeat("#",substr($h2, 1)) . ' {text}',
+    'template' => str_repeat("#",substr($h2, 1)) . ' ',
+    'class'    => "header",
     'icon'     => 'header'
   ),
   'h3' => array(
@@ -93,7 +95,8 @@ buttons::$setup = array(
     'btext'    => substr($h3, 1),
     'text'     => ' ',
     'shortcut' => 'meta+' . substr($h3, 1),
-    'template' => str_repeat("#",substr($h3, 1)) . ' {text}',
+    'template' => str_repeat("#",substr($h3, 1)) . ' ',
+    'class'    => "header",
     'icon'     => 'header'
   ),
   'bold' => array(
@@ -114,14 +117,16 @@ buttons::$setup = array(
     'label'    => $this->translation['buttons.ulist.label'],
     'text'     => ' ',
     'shortcut' => 'meta+u',
-    'template' => '- {text}',
+    'template' => '- ',
+    'class'    => "list",
     'icon'     => 'list-ul'
   ),
   'olist' => array(
     'label'    => $this->translation['buttons.olist.label'],
     'text'     => ' ',
     'shortcut' => 'meta+o',
-    'template' => '1. {text}',
+    'template' => '1. }',
+    'class'    => "list",
     'icon'     => 'list-ol'
   ),
   'link' => array(

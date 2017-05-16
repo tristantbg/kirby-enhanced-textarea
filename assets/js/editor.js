@@ -49,12 +49,27 @@
           var sel  = textarea.getSelection();
           var tpl  = button.data('tpl');
           var text = button.data('text');
+          var line = button.hasClass("list") || button.hasClass("header");
+          
+
+          if (line) {
+            var t = textarea[0];
+            var curline = t.value.substr(0, t.selectionStart).split("\n").length;
+            var linestocur = t.value.substr(0, t.selectionStart).split("\n");
+            linestocur.splice(-1, 1);
+            var charstocur = linestocur.join("\n").length;
+            if (linestocur.length > 0) {
+              charstocur++;
+            }
+            textarea.focus();
+            t.setSelectionRange(charstocur, charstocur);
+          }
 
           if(sel.length > 0) text = sel;
-
           var tag = tpl.replace('{text}', text);
-
           textarea.insertAtCursor(tag);
+
+
           textarea.trigger('autosize.resize');
 
         }
