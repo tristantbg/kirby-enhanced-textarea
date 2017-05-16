@@ -23,7 +23,7 @@ c::set('textarea.h3', 'h4');
 
 ### Buttons
 
-You can globally define what the default buttons should be. By default all buttons are displayed. If you don't need the `h1` and `email` buttons for example put the following in your `config.php`:
+You can globally define what the default buttons should be. By default all buttons are displayed. If you don't need the `h1` and `email` buttons for example, put the following in your `config.php`:
 
 ````
 c::set('textarea.buttons', array(
