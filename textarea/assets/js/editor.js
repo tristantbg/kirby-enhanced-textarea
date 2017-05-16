@@ -21,7 +21,28 @@
 
         if(button.data('action')) {
           
-          app.modal.open(button.data('action'), window.location.href);
+          app.modal.open(button.data('action'), function() {
+                      
+            $(".modal .slidedown.active").on('click', function() {
+              $(this).toggleClass("open")
+                     .closest(".page").children(".subpages").slideToggle(250, function() {
+                        var content = $('.modal-content');
+                        console.log(content.center(3 * 16));
+                     });
+            });
+            $(".modal .link.smalllink").on('click', function() {        
+              textarea = $("#" + $(".modal form").data("textarea"));
+              link = $(this).data("link");
+              name = $(this).siblings(".name").html();
+              var sel  = textarea.getSelection();
+              if(sel.length > 0) name = sel;
+              textarea.insertAtCursor("(link: " + link + " text: " + name + ")" );
+              textarea.trigger('autosize.resize');
+              app.modal.close();
+            });
+          
+          });
+          
           
         } else {
 
