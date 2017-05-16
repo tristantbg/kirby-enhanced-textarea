@@ -4,7 +4,7 @@
 
 ## Installation
 
-Simply put the "textarea" folder into your site/fields folder. The default textarea field will be overwritten and you don't need to edit your blueprints.
+Download or clone this repository and put the "kirby-enhanced-textarea-master" folder into your `site/fields` folder and rename it to `textarea`. Alternatively you can also use the [Kirby CLI](https://github.com/getkirby/cli).
 
 ## Configuration
 
