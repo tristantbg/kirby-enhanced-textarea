@@ -1,4 +1,4 @@
-# Kirby Enhanced Textarea v1.4
+# Kirby Enhanced Textarea v1.4 [![Buy me a beer](https://cloud.githubusercontent.com/assets/7975568/26115305/e7a3818e-3a5f-11e7-8072-13e2b9924435.png)](https://www.paypal.me/medienbaecker)
 
 This textarea extends the built-in textarea without reinventing the wheel. Handy and customizable headline functions, intelligent list buttons and a custom page selector make editing textareas a breeze.
 
