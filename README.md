@@ -1,4 +1,4 @@
-# Kirby Enhanced Textarea v1.3
+# Kirby Enhanced Textarea v1.4
 
 This textarea extends the built-in textarea without reinventing the wheel. Handy and customizable headline functions, intelligent list buttons and a custom page selector make editing textareas a breeze.
 
@@ -23,7 +23,23 @@ c::set('textarea.h3', 'h4');
 
 ### Buttons
 
-You don't need all the buttons? No problem, just use `buttons:` 
+You can globally define what the default buttons should be. By default all buttons are displayed. If you don't need the `h1` and `email` buttons for example put the following in your `config.php`:
+
+````
+c::set('textarea.buttons', array(
+  "h2",
+  "h3",
+  "bold",
+  "italic",
+  "ulist",
+  "olist",
+  "link",
+  "page"
+));
+````
+
+
+If you want to override this for a single field just use `buttons:` as you would with the built-in textarea:
 
 ````
 test:

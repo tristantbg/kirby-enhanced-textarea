@@ -12,7 +12,7 @@ class Buttons {
     $this->textarea = $textarea;
 
     if(!is_array($buttons)) {
-      $this->buttons = array_keys(static::$setup);
+      $this->buttons = c::get('textarea.buttons', array_keys(static::$setup));
     } else {
       $this->buttons = $buttons;
     }
