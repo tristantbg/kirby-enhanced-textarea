@@ -1,4 +1,4 @@
-# Kirby Enhanced Textarea v1.2
+# Kirby Enhanced Textarea v1.3
 
 ![Preview](preview.png?raw=true)
 
