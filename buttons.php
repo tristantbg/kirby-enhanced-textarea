@@ -12,7 +12,17 @@ class Buttons {
     $this->textarea = $textarea;
 
     if(!is_array($buttons)) {
-      $this->buttons = c::get('textarea.buttons', array_keys(static::$setup));
+      $this->buttons = c::get('textarea.buttons', array(
+        "h2",
+        "h3",
+        "bold",
+        "italic",
+        "ulist",
+        "olist",
+        "link",
+        "page",
+        "email"
+      ));
     } else {
       $this->buttons = $buttons;
     }
@@ -112,6 +122,14 @@ buttons::$setup = array(
     'shortcut' => 'meta+i',
     'template' => '*{text}*',
     'icon'     => 'italic'
+  ),
+  'blockquote' => array(
+    'label'    => $this->translation['buttons.blockquote.label'],
+    'text'     => ' ',
+    'shortcut' => 'meta+shift+b',
+    'template' => '> ',
+    'class'    => "list",
+    'icon'     => 'quote-left'
   ),
   'ulist' => array(
     'label'    => $this->translation['buttons.ulist.label'],

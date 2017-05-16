@@ -23,16 +23,12 @@ c::set('textarea.h3', 'h4');
 
 ### Buttons
 
-You can globally define what the default buttons should be. By default all buttons are displayed. If you don't need the `h1` and `email` buttons for example, put the following in your `config.php`:
+You can globally define default buttons for any textarea on your site by setting the `textarea.buttons` variable in your `config.php`. By default the buttons `h2` (headline 2), `h3` (headline 3), `bold`, `italic`, `ulist` (unordered list), `olist` (ordered list), `link`, `page` and `email` are displayed. There's also a `blockquote` and `h1` button you can use.
 
 ````
 c::set('textarea.buttons', array(
-  "h2",
-  "h3",
-  "bold",
-  "italic",
-  "ulist",
-  "olist",
+  "h1"
+  "blockquote",
   "link",
   "page"
 ));

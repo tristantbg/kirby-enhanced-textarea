@@ -15,6 +15,7 @@ return [
   'buttons.bold.text'        => 'Fetter Text',
   'buttons.italic.label'     => 'Kursiv',
   'buttons.italic.text'      => 'Kursiver Text',
+  'buttons.blockquote.label' => "Zitat",
   'buttons.ulist.label'      => 'Ungeordnete Liste',
   'buttons.olist.label'      => 'Geordnete Liste',
   'buttons.link.label'       => 'Link',
