@@ -1,10 +1,12 @@
 # Kirby Enhanced Textarea v1.3
 
+This textarea extends the built-in textarea without reinventing the wheel. Handy and customizable headline functions, intelligent list buttons and a custom page selector makes editing textareas a breeze.
+
 ![Preview](https://cloud.githubusercontent.com/assets/7975568/26103764/44eb2fc4-3a3b-11e7-87dc-86b328f22f85.gif)
 
 ## Installation
 
-Download or clone this repository and put the "kirby-enhanced-textarea-master" folder into your `site/fields` folder and rename it to `textarea`. Alternatively you can also use the [Kirby CLI](https://github.com/getkirby/cli).
+Download or clone this repository, put the folder into your `site/fields` folder and rename it to `textarea`. Alternatively you can also use the [Kirby CLI](https://github.com/getkirby/cli).
 
 ## Configuration
 
