@@ -125,7 +125,7 @@ buttons::$setup = array(
     'label'    => $this->translation['buttons.olist.label'],
     'text'     => ' ',
     'shortcut' => 'meta+o',
-    'template' => '1. }',
+    'template' => '1. ',
     'class'    => "list",
     'icon'     => 'list-ol'
   ),

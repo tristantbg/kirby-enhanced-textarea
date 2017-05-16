@@ -47,13 +47,14 @@
         } else {
 
           var sel  = textarea.getSelection();
+          var selStart = textarea[0].selectionStart;
+          var selEnd = textarea[0].selectionEnd;
           var tpl  = button.data('tpl');
           var text = button.data('text');
           var line = button.hasClass("list") || button.hasClass("header");
+          var multiple = button.hasClass("list");
           
-
-          if (line) {
-            var t = textarea[0];
+          function toLine(t) {
             var curline = t.value.substr(0, t.selectionStart).split("\n").length;
             var linestocur = t.value.substr(0, t.selectionStart).split("\n");
             linestocur.splice(-1, 1);
@@ -61,13 +62,47 @@
             if (linestocur.length > 0) {
               charstocur++;
             }
-            textarea.focus();
+            t.focus();
             t.setSelectionRange(charstocur, charstocur);
           }
+          
+          function fullLines(t) {
+            var curline = t.value.substr(0, t.selectionStart).split("\n").length;
+            var linestocur = t.value.substr(0, t.selectionStart).split("\n");
+            linestocur.splice(-1, 1);
+            var charstocur = linestocur.join("\n").length;
+            if (linestocur.length > 0) {
+              charstocur++;
+            }
+            t.focus();
+            t.setSelectionRange(charstocur, selEnd);
+            selStart = textarea[0].selectionStart;
+            selEnd = textarea[0].selectionEnd;
+          }
 
-          if(sel.length > 0) text = sel;
-          var tag = tpl.replace('{text}', text);
-          textarea.insertAtCursor(tag);
+          if (line) {
+            var t = textarea[0];
+            toLine(t);
+          }
+          
+          if (multiple && sel.indexOf("\n") >= 0) {
+            fullLines(t);
+            var newsel = textarea.getSelection().split("\n");
+            for (var i = 0; i < newsel.length; i++) {
+              newsel[i] = tpl + newsel[i];
+            }
+            newsel = newsel.join("\n");
+            var before = textarea[0].value.slice(0, selStart);
+            var after = textarea[0].value.slice(selEnd);
+            textarea[0].value = before + newsel + after;
+          }
+          else {
+            if(sel.length > 0) text = sel;
+            var tag = tpl.replace('{text}', text);
+            textarea.insertAtCursor(tag);
+          }
+          
+          
 
 
           textarea.trigger('autosize.resize');
