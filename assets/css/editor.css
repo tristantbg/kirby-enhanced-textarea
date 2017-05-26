@@ -77,3 +77,27 @@
 }
 
 /* <- PAGELINK */
+
+
+/* AUTOCOMPLETE -> */
+
+.textcomplete-dropdown {
+  list-style: none;
+  background-color: white;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+}
+  .textcomplete-dropdown .textcomplete-item {
+    padding: .5em 1em;
+    text-transform: capitalize;
+  }
+    .textcomplete-dropdown .textcomplete-item a {
+      color: inherit;
+    }
+  .textcomplete-dropdown .textcomplete-item.active {
+    background-color: #8DAE28;
+    color: white;
+  }
+
+/* <- AUTOCOMPLETE */

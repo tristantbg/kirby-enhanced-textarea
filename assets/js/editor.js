@@ -127,7 +127,24 @@
         }
 
       });
-
+      
+      
+      var kirbyTags = ['link', 'file', 'image', 'email'];
+      textarea.textcomplete([
+        { // html
+          match: /\((\w*)$/,
+          search: function (term, callback) {
+            callback($.map(kirbyTags, function (element) {
+              return element.indexOf(term) === 0 ? element : null;
+            }));
+          },
+          index: 1,
+          replace: function (element) {
+            return ['(' + element + ': ', ')'];
+          }
+        }
+      ]);
+      
       textarea.data('editor', true);
 
     });
