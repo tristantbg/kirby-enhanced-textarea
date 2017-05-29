@@ -2,28 +2,25 @@
   
   $.fn.betterInsertAtCursor = function (myValue) {
     return this.each(function(){
-      // IE support
+      // IE < 11
       if(document.selection) {
         this.focus();
         sel = document.selection.createRange();
         sel.text = myValue;
         this.focus();
-      // Moz / Netscape support
+      // IE 11 + modern browsers
       } else if (this.selectionStart || this.selectionStart == '0') {
         var startPos  = this.selectionStart;
         var endPos    = this.selectionEnd;
-        var scrollTop = this.scrollTop;
         this.focus();
         
         tryToinsertText = document.execCommand("insertText", false, myValue);
         if (tryToinsertText == false) {
           this.value = this.value.substring(0, startPos)+ myValue+ this.value.substring(endPos,this.value.length);
-          this.focus();
-          this.selectionStart = startPos + myValue.length;
-          this.selectionEnd = startPos + myValue.length;
-          this.scrollTop = scrollTop;
         }
-        
+        this.selectionStart = startPos + myValue.length;
+        this.selectionEnd = startPos + myValue.length;
+
       } else {
         this.value += myValue;
         this.focus();
@@ -58,7 +55,6 @@
               $(this).toggleClass("open")
                      .closest(".page").children(".subpages").slideToggle(250, function() {
                         var content = $('.modal-content');
-                        console.log(content.center(3 * 16));
                      });
             });
             $(".modal .link.smalllink").on('click', function() {        
@@ -123,9 +119,20 @@
               newsel[i] = tpl + newsel[i];
             }
             newsel = newsel.join("\n");
+            var oldValue = textarea[0].value;
             var before = textarea[0].value.slice(0, selStart);
             var after = textarea[0].value.slice(selEnd);
-            textarea[0].value = before + newsel + after;
+            
+            document.execCommand("selectAll");
+            tryToDeleteText = document.execCommand("delete");
+            if (tryToDeleteText = false) {
+              textarea[0].value = "";
+            }
+            tryToinsertText = document.execCommand("insertText", false, before + newsel + after);
+            if (tryToinsertText == false) {
+              this.value = before + newsel + after;
+            }            
+            
           }
           else {
             if(sel.length > 0) text = sel;

@@ -24,14 +24,12 @@
       textField.val(selection);
     }
   }
-
+  
   form.on('submit', function() {
 
     var url   = urlField.val();
     var text  = textField.val();
     var popup = popupField.val();
-    
-    console.log(popup);
 
     // make sure not to add invalid parenthesis
     text = text.replace('(', '[');
@@ -54,7 +52,7 @@
       var tag = '[' + text + '](' + url + ')';
     }
 
-    textarea.insertAtCursor(tag);
+    textarea.betterInsertAtCursor(tag);
     app.modal.close();
 
   });

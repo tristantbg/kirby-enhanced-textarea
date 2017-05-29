@@ -37,7 +37,7 @@
       var tag = '[' + text + '](mailto:' + address + ')';
     }
 
-    textarea.insertAtCursor(tag);
+    textarea.betterInsertAtCursor(tag);
     app.modal.close();
 
   });
