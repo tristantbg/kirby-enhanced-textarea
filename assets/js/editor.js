@@ -1,4 +1,26 @@
 (function($) {
+  
+  $.fn.betterInsertAtCursor = function (myValue) {
+    return this.each(function(){
+      // IE support
+      if(document.selection) {
+        this.focus();
+        sel = document.selection.createRange();
+        sel.text = myValue;
+        this.focus();
+      // Moz / Netscape support
+      } else if (this.selectionStart || this.selectionStart == '0') {
+        var startPos  = this.selectionStart;
+        var endPos    = this.selectionEnd;
+        var scrollTop = this.scrollTop;
+        this.focus();
+        document.execCommand("insertText", false, myValue);
+      } else {
+        this.value += myValue;
+        this.focus();
+      }
+    });
+  };
 
   $.fn.editor = function() {
 
@@ -36,7 +58,7 @@
               name = $(this).siblings(".name").html();
               var sel  = textarea.getSelection();
               if(sel.length > 0) name = sel;
-              textarea.insertAtCursor("(link: " + link + " text: " + name + ")" );
+              textarea.betterInsertAtCursor("(link: " + link + " text: " + name + ")" );
               textarea.trigger('autosize.resize');
               app.modal.close();
             });
@@ -99,7 +121,7 @@
           else {
             if(sel.length > 0) text = sel;
             var tag = tpl.replace('{text}', text);
-            textarea.insertAtCursor(tag);
+            textarea.betterInsertAtCursor(tag);
           }
           
           
