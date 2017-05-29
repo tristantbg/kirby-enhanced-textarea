@@ -14,7 +14,16 @@
         var endPos    = this.selectionEnd;
         var scrollTop = this.scrollTop;
         this.focus();
-        document.execCommand("insertText", false, myValue);
+        
+        tryToinsertText = document.execCommand("insertText", false, myValue);
+        if (tryToinsertText == false) {
+          this.value = this.value.substring(0, startPos)+ myValue+ this.value.substring(endPos,this.value.length);
+          this.focus();
+          this.selectionStart = startPos + myValue.length;
+          this.selectionEnd = startPos + myValue.length;
+          this.scrollTop = scrollTop;
+        }
+        
       } else {
         this.value += myValue;
         this.focus();
