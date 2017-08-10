@@ -4,7 +4,7 @@ This textarea extends the built-in textarea without reinventing the wheel. Handy
 
 ![Preview](https://cloud.githubusercontent.com/assets/7975568/26114866/b3d1ee64-3a5e-11e7-8da6-0154f5e3399f.gif)
 
-## New Feature in 1.5: Autocomplete for Kirbytags :sparkles:
+## New Feature in 1.5: :confetti_ball: Autocomplete for Kirbytags :confetti_ball:
 
 This field now automatically includes all the built-in and custom Kirbytags for its autocomplete function:
 
