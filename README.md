@@ -13,8 +13,15 @@ Download or clone this repository, put the folder into your `site/fields` folder
 ### Autocomplete
 
 This field automatically includes all the built-in and custom kirbytags for its autocomplete function. If you want to exclude some of the kirbytags you can do that in the `site/config.phpg`:
+
 ```
 c::set('textarea.excludedKirbyTags', array("gist", "vimeo", "youtube", "twitter"));
+```
+
+You can also include only some of your kirbytags and exclude all the others like this:
+
+```
+c::set('textarea.includedKirbyTags', array("image", "link"));
 ```
 
 ### Headlines
