@@ -4,21 +4,27 @@ This textarea extends the built-in textarea without reinventing the wheel. Handy
 
 ![Preview](https://cloud.githubusercontent.com/assets/7975568/26114866/b3d1ee64-3a5e-11e7-8da6-0154f5e3399f.gif)
 
+## New Feature in 1.5: Autocomplete for Kirbytags :sparkles:
+
+This field now automatically includes all the built-in and custom Kirbytags for its autocomplete function:
+
+![Autocomplete](https://user-images.githubusercontent.com/7975568/29191428-f6e952fc-7e1d-11e7-8606-d8b9ee9f4ffe.gif)
+
 ## Installation
 
 Download or clone this repository, put the folder into your `site/fields` folder and rename it to `textarea`. Alternatively you can also use the [Kirby CLI](https://github.com/getkirby/cli).
 
 ## Configuration
 
-### Autocomplete
+### Exclude from Autocomplete
 
-This field automatically includes all the built-in and custom kirbytags for its autocomplete function. If you want to exclude some of the kirbytags you can do that in the `site/config.phpg`:
+If you want to exclude some of the Kirbytags you can do that in the `site/config.phpg`:
 
 ```
 c::set('textarea.excludedKirbyTags', array("gist", "vimeo", "youtube", "twitter"));
 ```
 
-You can also include only some of your kirbytags and exclude all the others like this:
+You can also include only some of your Kirbytags and exclude all the others like this:
 
 ```
 c::set('textarea.includedKirbyTags', array("image", "link"));
