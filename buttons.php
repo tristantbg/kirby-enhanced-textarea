@@ -32,6 +32,16 @@ class Buttons {
   public function __toString() {
 
     $html  = '<nav class="field-buttons">';
+    
+    $html .= '<div class="kirbytags">';
+    
+    foreach (kirbytext::$tags as $kirbytag => $content) {
+      $html .= '<div class="kirbytag">' . $kirbytag . '</div>';
+    }
+    
+    $html .= '</div>';
+    
+    
     $html .= '<ul class="nav nav-bar">';
 
     foreach(static::$setup as $key => $button) {

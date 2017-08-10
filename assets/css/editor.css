@@ -4,6 +4,9 @@
 .field-buttons .btn {
   padding: .5em 1.25em;
 }
+.field-with-textarea .field-buttons .kirbytags {
+  display: none;
+}
 
 /* BUTTON HOVER -> */
 

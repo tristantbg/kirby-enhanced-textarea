@@ -129,7 +129,13 @@
       });
       
       
-      var kirbyTags = ['link', 'file', 'image', 'email'];
+      var kirbyTags = new Array();
+      
+      buttons.find(".kirbytags .kirbytag").each(function() {
+        kirbyTags.push($(this).text());
+      });
+      
+      
       textarea.textcomplete([
         { // html
           match: /\((\w*)$/,
