@@ -156,7 +156,7 @@
         'textComplete:select': function (e, value, strategy) {
           for (var i = 0; i < kirbyTags.length; i++) {
             if (kirbyTags[i] == value) {
-              // console.log(attributes[i]);
+              console.log(attributes[i]);
             }
           }
         }
