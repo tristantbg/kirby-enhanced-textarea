@@ -130,11 +130,16 @@
       
       
       var kirbyTags = new Array();
+      var attributes = new Array();
       
       buttons.find(".kirbytags .kirbytag").each(function() {
-        kirbyTags.push($(this).text());
+        kirbyTags.push($(this).find(".kirbytag-name").text());
+        kirbyTagAttributes = new Array();
+        $(this).find(".attributes .attribute").each(function() {
+          kirbyTagAttributes.push($(this).text());
+        });
+        attributes.push(kirbyTagAttributes);
       });
-      
       
       textarea.textcomplete([
         { // html
@@ -146,6 +151,13 @@
           },
           index: 1,
           replace: function (element) {
+            
+            for (var i = 0; i < kirbyTags.length; i++) {
+              if (kirbyTags[i] == element) {
+                console.log(attributes[i]);
+              }
+            }
+            
             return ['(' + element + ': ', ')'];
           }
         }
