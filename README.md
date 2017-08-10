@@ -1,4 +1,4 @@
-# Kirby Enhanced Textarea v1.4 <a href="https://www.paypal.me/medienbaecker"><img width="125" src="https://cloud.githubusercontent.com/assets/7975568/26115669/fb7041b0-3a60-11e7-8480-d1d5c303717c.png" alt="Buy me a beer"></a>
+# Kirby Enhanced Textarea v1.5 <a href="https://www.paypal.me/medienbaecker"><img width="125" src="https://cloud.githubusercontent.com/assets/7975568/26115669/fb7041b0-3a60-11e7-8480-d1d5c303717c.png" alt="Buy me a beer"></a>
 
 This textarea extends the built-in textarea without reinventing the wheel. Handy and customizable headline functions, intelligent list buttons and a custom page selector make editing textareas a breeze.
 
@@ -9,6 +9,13 @@ This textarea extends the built-in textarea without reinventing the wheel. Handy
 Download or clone this repository, put the folder into your `site/fields` folder and rename it to `textarea`. Alternatively you can also use the [Kirby CLI](https://github.com/getkirby/cli).
 
 ## Configuration
+
+### Autocomplete
+
+This field automatically includes all the built-in and custom kirbytags for its autocomplete function. If you want to exclude some of the kirbytags you can do that in the `site/config.phpg`:
+```
+c::set('textarea.excludedKirbyTags', array("gist", "vimeo", "youtube", "twitter"));
+```
 
 ### Headlines
 

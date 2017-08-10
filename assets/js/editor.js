@@ -102,9 +102,6 @@
             textarea.insertAtCursor(tag);
           }
           
-          
-
-
           textarea.trigger('autosize.resize');
 
         }
@@ -142,7 +139,8 @@
       });
       
       textarea.textcomplete([
-        { // html
+        { // kirbytags
+          id: 'kirbytags',
           match: /\((\w*)$/,
           search: function (term, callback) {
             callback($.map(kirbyTags, function (element) {
@@ -151,17 +149,18 @@
           },
           index: 1,
           replace: function (element) {
-            
-            for (var i = 0; i < kirbyTags.length; i++) {
-              if (kirbyTags[i] == element) {
-                console.log(attributes[i]);
-              }
-            }
-            
             return ['(' + element + ': ', ')'];
           }
         }
-      ]);
+      ]).on({
+        'textComplete:select': function (e, value, strategy) {
+          for (var i = 0; i < kirbyTags.length; i++) {
+            if (kirbyTags[i] == value) {
+              console.log(attributes[i]);
+            }
+          }
+        }
+      });
       
       textarea.data('editor', true);
 

@@ -30,12 +30,13 @@ class Buttons {
   }
 
   public function __toString() {
+    
+    $excludedKirbyTags = c::get('textarea.excludedKirbyTags', array());
 
     $html  = '<nav class="field-buttons">';
-    
     $html .= '<div class="kirbytags">';
-    
     foreach (kirbytext::$tags as $kirbytag => $content) {
+      if (in_array($kirbytag, $excludedKirbyTags)) continue;
       $html .= '<div class="kirbytag">';
       $html .= '<div class="kirbytag-name">';
       $html .= $kirbytag;
@@ -49,7 +50,6 @@ class Buttons {
       $html .= '</div>';
       $html .= '</div>';
     }
-    
     $html .= '</div>';
     
     
