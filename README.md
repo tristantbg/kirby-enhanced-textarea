@@ -16,7 +16,7 @@ Download or clone this repository, put the folder into your `site/fields` folder
 
 ## Configuration
 
-### Exclude from Autocomplete
+### Exclude from autocomplete
 
 If you want to exclude some of the Kirbytags you can do that in the `site/config.phpg`:
 
@@ -28,6 +28,14 @@ You can also include only some of your Kirbytags and exclude all the others like
 
 ```
 c::set('textarea.includedKirbyTags', array("image", "link"));
+```
+
+### Disable autocomplete
+
+If you want to disable the autocomplete functionality you can use the following:
+
+```
+c::set('textarea.autocomplete', false);
 ```
 
 ### Headlines

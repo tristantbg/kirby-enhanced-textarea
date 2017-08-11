@@ -31,32 +31,38 @@ class Buttons {
 
   public function __toString() {
     
-    $excludedKirbyTags = c::get('textarea.excludedKirbyTags', array());
-    $includedKirbyTags = c::get('textarea.includedKirbyTags', null);
-  
     $html  = '<nav class="field-buttons">';
-    $html .= '<div class="kirbytags">';
-    foreach (kirbytext::$tags as $kirbytag => $content) {
-      if (is_array($includedKirbyTags)) {
-        if (!in_array($kirbytag, $includedKirbyTags)) continue;
-      }
-      elseif (in_array($kirbytag, $excludedKirbyTags)) continue;
+    
+    $autocomplete = c::get('textarea.autocomplete', true);
+    
+    if ($autocomplete == true) {
       
-      $html .= '<div class="kirbytag">';
-      $html .= '<div class="kirbytag-name">';
-      $html .= $kirbytag;
-      $html .= '</div>';
-      $html .= '<div class="attributes">';
-      foreach ($content["attr"] as $key => $content) {
-        $html .= '<div class="attribute">';
-        $html .= $content;
+      $excludedKirbyTags = c::get('textarea.excludedKirbyTags', array());
+      $includedKirbyTags = c::get('textarea.includedKirbyTags', null);
+    
+      $html .= '<div class="kirbytags">';
+      foreach (kirbytext::$tags as $kirbytag => $content) {
+        if (is_array($includedKirbyTags)) {
+          if (!in_array($kirbytag, $includedKirbyTags)) continue;
+        }
+        elseif (in_array($kirbytag, $excludedKirbyTags)) continue;
+        
+        $html .= '<div class="kirbytag">';
+        $html .= '<div class="kirbytag-name">';
+        $html .= $kirbytag;
+        $html .= '</div>';
+        $html .= '<div class="attributes">';
+        foreach ($content["attr"] as $key => $content) {
+          $html .= '<div class="attribute">';
+          $html .= $content;
+          $html .= '</div>';
+        }
+        $html .= '</div>';
         $html .= '</div>';
       }
       $html .= '</div>';
-      $html .= '</div>';
-    }
-    $html .= '</div>';
     
+    }
     
     $html .= '<ul class="nav nav-bar">';
 
