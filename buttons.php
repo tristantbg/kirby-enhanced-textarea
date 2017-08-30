@@ -109,35 +109,58 @@ class Buttons {
 
 }
 
-$h1 = c::get('textarea.h1', 'h1');
-$h2 = c::get('textarea.h2', 'h2');
-$h3 = c::get('textarea.h3', 'h3');
-
 buttons::$setup = array(
   'h1' => array(
     'label'    => $this->translation['buttons.h1.label'],
-    'btext'    => substr($h1, 1),
+    'btext'    => '1',
     'text'     => ' ',
-    'shortcut' => 'meta+' . substr($h1, 1),
-    'template' => str_repeat("#",substr($h1, 1)) . ' ',
+    'shortcut' => 'meta+1',
+    'template' => str_repeat("#", 1) . ' ',
     'class'    => "header",
     'icon'     => 'header'
   ),
   'h2' => array(
     'label'    => $this->translation['buttons.h2.label'],
-    'btext'    => substr($h2, 1),
+    'btext'    => '2',
     'text'     => ' ',
-    'shortcut' => 'meta+' . substr($h2, 1),
-    'template' => str_repeat("#",substr($h2, 1)) . ' ',
+    'shortcut' => 'meta+2',
+    'template' => str_repeat("#", 2) . ' ',
     'class'    => "header",
     'icon'     => 'header'
   ),
   'h3' => array(
     'label'    => $this->translation['buttons.h3.label'],
-    'btext'    => substr($h3, 1),
+    'btext'    => '3',
     'text'     => ' ',
-    'shortcut' => 'meta+' . substr($h3, 1),
-    'template' => str_repeat("#",substr($h3, 1)) . ' ',
+    'shortcut' => 'meta+3',
+    'template' => str_repeat("#", 3) . ' ',
+    'class'    => "header",
+    'icon'     => 'header'
+  ),
+  'h4' => array(
+    'label'    => $this->translation['buttons.h4.label'],
+    'btext'    => '4',
+    'text'     => ' ',
+    'shortcut' => 'meta+4',
+    'template' => str_repeat("#", 4) . ' ',
+    'class'    => "header",
+    'icon'     => 'header'
+  ),
+  'h5' => array(
+    'label'    => $this->translation['buttons.h5.label'],
+    'btext'    => '5',
+    'text'     => ' ',
+    'shortcut' => 'meta+5',
+    'template' => str_repeat("#", 5) . ' ',
+    'class'    => "header",
+    'icon'     => 'header'
+  ),
+  'h6' => array(
+    'label'    => $this->translation['buttons.h6.label'],
+    'btext'    => '6',
+    'text'     => ' ',
+    'shortcut' => 'meta+6',
+    'template' => str_repeat("#", 6) . ' ',
     'class'    => "header",
     'icon'     => 'header'
   ),
