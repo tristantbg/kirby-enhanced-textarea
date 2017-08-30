@@ -33,7 +33,7 @@ class Buttons {
     
     $html  = '<nav class="field-buttons">';
     
-    $autocomplete = c::get('textarea.autocomplete', true);
+    $autocomplete = c::get('textarea.autocomplete', false);
     
     if ($autocomplete == true) {
       
