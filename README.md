@@ -38,7 +38,7 @@ c::set('textarea.includedKirbyTags', array("image", "link"));
 
 ### Buttons
 
-You can globally define default buttons for any textarea on your site by setting the `textarea.buttons` variable in your `config.php`. By default the buttons `h2` (headline 2), `h3` (headline 3), `h4` (headline 4), `h5` (headline 5), `h6` (headline 6), `bold`, `italic`, `ulist` (unordered list), `olist` (ordered list), `link`, `page` and `email` are displayed. There's also a `blockquote` and `h1` button you can use.
+You can globally define default buttons for any textarea on your site by setting the `textarea.buttons` variable in your `config.php`. By default the buttons `h2` (headline 2), `h3` (headline 3), `bold`, `italic`, `ulist` (unordered list), `olist` (ordered list), `link`, `page` and `email` are displayed. There are also buttons for `blockquote`, `h1`, `h4`, `h5` and `h6` you can use.
 
 ````
 c::set('textarea.buttons', array(
